@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ALIGO_HOST = "https://kakaoapi.aligo.in";
+const ALIGO_HOST = "https://apis.aligo.in";
 
 export function createAligoRequester() {
   const requester = axios.create({ baseURL: ALIGO_HOST });
