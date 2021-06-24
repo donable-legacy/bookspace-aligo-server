@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": ["es2017"],
+    "module": "commonjs",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es2017",
+    "outDir": "dist",
+    "baseUrl": "src",
+    "skipLibCheck": true,
+    "paths": {
+      "controller/*": ["controller/*"],
+      "handler/*": ["handler/*"],
+      "entity/*": ["entity/*"],
+      "config/*": ["config/*"],
+      "util/*": ["util/*"],
+      "shared/*": ["shared/*"],
+      "module/*": ["module/*"]
+    }
+  },
+  "exclude": ["node_modules", "**/*.test.ts"]
+}

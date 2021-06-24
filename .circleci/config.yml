@@ -1,0 +1,14 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+jobs:
+  deploy:
+    docker:
+      - image: "cimg/node:12.19.1"
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn deploy
+workflows:
+  deploy:
+    jobs:
