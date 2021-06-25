@@ -5,9 +5,10 @@
   "main": "handler.js",
   "scripts": {
     "test": "jest",
+    "start": "node dist/lambda.js",
     "build": "tsc -p tsconfig.json",
     "deploy": "sls deploy -v -s live",
-    "dev": "sls offline start -s alpha"
+    "dev": "ts-node -r tsconfig-paths/register src/lambda.ts"
   },
   "dependencies": {
     "@nestjs/common": "^7.6.14",
@@ -24,6 +25,7 @@
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.0",
     "crypto": "^1.0.1",
+    "module-alias": "^2.2.2",
     "nestjs-config": "^1.4.4",
     "rimraf": "^2.6.2",
     "rxjs": "^6.2.2"
@@ -46,5 +48,11 @@
     "tsconfig-paths": "^3.5.0",
     "tslint": "5.11.0",
     "typescript": "^4.2.3"
+  },
+  "_moduleAliases": {
+    "controller": "dist/controller",
+    "shared": "dist/shared",
+    "util": "dist/util",
+    "module": "dist/module"
   }
 }
