@@ -24,7 +24,7 @@ async function bootstrapServer() {
   nestApp.use(urlencoded({ limit: "50mb", extended: true }));
   await nestApp.init();
   const server = createServer(expressApp, undefined, binaryMimeTypes);
-  server.listen(80);
+  server.listen(3000);
 }
 
 bootstrapServer();
