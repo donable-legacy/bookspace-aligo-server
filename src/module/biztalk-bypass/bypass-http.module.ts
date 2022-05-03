@@ -8,6 +8,6 @@ import { BypassService } from "./bypass.service";
   controllers: [BypassController],
   exports: [],
 })
-export class BypassHttpModule implements NestModule {
+export class BiztalkBypassHttpModule implements NestModule {
   public configure() {}
 }

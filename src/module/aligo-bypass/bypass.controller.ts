@@ -4,12 +4,12 @@ import { assertAxiosError } from "util/assertAxiosError";
 import { aligoRequester } from "util/requester";
 import { BypassDTO } from "./bypass.dto";
 
-@Controller("bypass")
+@Controller("aligo/bypass")
 export class BypassController {
   constructor() {}
 
   @Post()
-  async bypass(@Body() payload: BypassDTO) {
+  async c(@Body() payload: BypassDTO) {
     try {
       const res = await aligoRequester.request({
         url: payload.url,

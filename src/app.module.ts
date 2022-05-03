@@ -1,5 +1,6 @@
 import { Module } from "@nestjs/common";
-import { BypassHttpModule } from "module/bypass/bypass-http.module";
+import { AligoBypassHttpModule } from "module/aligo-bypass/bypass-http.module";
+import { BiztalkBypassHttpModule } from "module/biztalk-bypass/bypass-http.module";
 import { ConfigModule } from "nestjs-config";
 import * as path from "path";
 import { AppController } from "./app.controller";
@@ -12,7 +13,8 @@ import { AppService } from "./app.service";
     ConfigModule.load(
       path.resolve(__dirname, "config", "**", "!(*.d).{ts,js}")
     ),
-    BypassHttpModule,
+    AligoBypassHttpModule,
+    BiztalkBypassHttpModule,
   ],
 })
 export class AppModule {}
