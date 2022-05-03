@@ -7,3 +7,11 @@ export function createAligoRequester() {
   return requester;
 }
 export const aligoRequester = createAligoRequester();
+
+const BIZTALK_HOST = "https://www.biztalk-api.com";
+
+export function createBiztalkRequester() {
+  const requester = axios.create({ baseURL: BIZTALK_HOST });
+  return requester;
+}
+export const biztalkRequester = createBiztalkRequester();

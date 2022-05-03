@@ -1,6 +1,6 @@
 import { Body, Controller, HttpException, Post } from "@nestjs/common";
 import { assertAxiosError } from "util/assertAxiosError";
-import { aligoRequester } from "util/requester";
+import { biztalkRequester } from "util/requester";
 import { BiztalkBypassDTO } from "./bypass.dto";
 
 @Controller("biztalk/bypass")
@@ -8,7 +8,7 @@ export class BypassController {
   @Post()
   async bypass(@Body() payload: BiztalkBypassDTO) {
     try {
-      const res = await aligoRequester.request({
+      const res = await biztalkRequester.request({
         url: payload.url,
         data: payload.data,
         method: payload.method ?? "POST",
