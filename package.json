@@ -1,17 +1,18 @@
 {
-  "name": "boockspace-aligo-server",
+  "name": "aligo-server",
   "version": "1.0.0",
-  "description": "bookspace aligo server",
+  "description": "aligo server",
   "main": "handler.js",
   "scripts": {
     "test": "jest",
-    "start": "node dist/lambda.js",
-    "build": "tsc -p tsconfig.json",
+    "start": "yarn build & pm2 start ecosystem.config.js",
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
     "deploy": "sls deploy -v -s live",
     "dev": "ts-node -r tsconfig-paths/register src/lambda.ts"
   },
   "dependencies": {
     "@nestjs/common": "^7.6.14",
+    "tsc-alias": "^1.8.7",
     "@nestjs/core": "^7.6.14",
     "@nestjs/jwt": "^7.2.0",
     "@nestjs/passport": "^7.1.5",
@@ -39,6 +40,7 @@
     "prettier": "^1.14.2",
     "ts-loader": "^4.4.2",
     "ts-node": "^7.0.1",
+    "pm2": "^5.3.0",
     "tsconfig-paths": "^3.5.0",
     "tslint": "5.11.0",
     "typescript": "^4.2.3"
