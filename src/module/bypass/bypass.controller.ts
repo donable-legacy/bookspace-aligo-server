@@ -1,19 +1,19 @@
-import { Body, Controller, Options, Post } from '@nestjs/common';
-import axios from 'axios';
+import { Body, Controller, Options, Post } from "@nestjs/common";
+import axios, { Method } from "axios";
 
-@Controller('bypass')
+@Controller("bypass")
 export class BypassController {
   constructor() {}
 
   @Options()
   async options() {
-    return 'ok';
+    return "ok";
   }
 
   @Post()
   async bypass(@Body() data: BypassPayload) {
     const { url, method, query, body, headers } = data;
-    const request = await axios({
+    const request = await axios.request({
       url,
       method,
       params: query,
@@ -26,7 +26,7 @@ export class BypassController {
 
 export interface BypassPayload {
   url: string;
-  method: string;
+  method: Method;
   query: Record<string, string>;
   body: unknown;
   headers: Record<string, string>;
